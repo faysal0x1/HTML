@@ -28,7 +28,9 @@ ul li {
   visibility: hidden;
 }
 /* ================= Re usuable Component ================ */
-
+:focus {
+  outline: 0;
+}
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -188,12 +190,67 @@ header {
   background: rgba(135, 80, 156, 0.9);
   padding: 1rem 0;
   box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.9);
+  z-index: 999;
 }
 .sticky .logo {
   margin-top: 0;
 }
 .sticky .main-nav {
   margin-top: 0.2rem;
+}
+
+/* ===================== Mobile Menu ==================== */
+.mobile-menu {
+  display: none;
+}
+.mobile-menu span {
+  color: #fff;
+  font-size: 4rem;
+  float: right;
+  margin-top: 2rem;
+  display: none;
+}
+.mobile-menu span:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  overflow-x: hidden;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}
+.overlay-content a {
+  text-decoration: none;
+  display: block;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.36rem;
+  color: #999;
+  padding: 1rem 0;
+}
+
+.overlay-content a:hover {
+  color: #fff;
+}
+.closebtn {
+  position: absolute;
+  top: 2rem;
+  right: 4.5rem;
 }
 .active {
   background: rgba(100, 58, 121, 1);
@@ -441,7 +498,7 @@ svg.web-design circle {
 
 .portfolio-img {
   width: 100%;
-  height: 30rem;
+  height: auto;
 }
 
 .portfolio-section .col:nth-child(3) {
